@@ -1,159 +1,205 @@
 @import url('https://fonts.googleapis.com/css2?family=Gloock&display=swap');
 
-:root{
-    --color-primary:#bdd63c;
-    --color-green: #009048;
-}
-body{
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
-    font-family: 'gloock', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+:root {
+    --color-primary: #bdd63c;
+    --color-green: #58b989;
 }
 
-header{
-    height: 50px;
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-width: 100vw;
+    min-height: 100vh;
     width: 100%;
-    padding:0 20px;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-family: FSJoey;
+}
+
+header {
+    height: 60px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #000;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 30%);
-
+    background: #fff;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0, 30%);
+    padding: 0 40px;
 }
-header .logo{
+
+header .logo {
     width: 50px;
     height: 50px;
 }
-header .logo img{
+
+header .logo img {
     width: 100%;
     height: 100%;
 }
-header nav{
-    display: flex;
-    width: calc(100% - 90px);
-    justify-content: center;
-    padding-right: 40px;
 
+header nav {
+    display: flex;
+    justify-content: center;
 }
-header nav a{
+
+header nav a {
     text-decoration: none;
-    color: var(--color-green);
-    font-weight: 600;
+    color: #000;
     margin: 0 8px;
+    font-weight: 600;
     transition: all 0.1s ease;
 }
-header nav a:hover{
-   color: var(--color-primary);
+
+header nav a:hover {
+    color: var(--color-primary);
+}
+
+@media screen and (max-width:768px) {
+
+    header{
+        padding: 0 20px;
+    }
+
+    header nav {
+        width: calc(100% - 70px);
+        padding-right: 20px;
+    }
+
+    header nav a {
+        display: none;
+    }
 }
 
 
 /* Footer CSS Design */
-footer{
-    background-color:#000;
+footer {
     width: 100%;
-   
+    background: #000;
 }
-footer .top{
-    border-bottom: 1px solid #fff;
+
+footer .top {
+    width: 100%;
     padding: 10px 20px;
-    width: 100%;
+    border-bottom: 1px solid var(--color-primary);
 }
-footer .top img{
+
+footer .top img {
     width: 50px;
     height: 50px;
 }
-footer .content{
+
+footer .content {
     padding: 10px 0;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-  
 }
+
 footer .content .box {
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-flow: column;
     width: 25%;
-    padding-left: 25px;
-    margin: 0px 10px;
-    
+    padding: 0px 20px;
 }
-footer .content .box h4 {
+
+footer .content .box .navigations {
+    flex-direction: column;
+    display: flex;
+    padding: 0 5px;
+}
+
+footer .title {
     margin: 10px 0;
     text-transform: uppercase;
-    color: var(--color-primary);
+    color: #fff;
     font-weight: 600;
     font-size: 17px;
 }
-footer .content .box a{
+
+footer .box a {
     margin: 5px 0;
     text-decoration: none;
     color: var(--color-green);
     font-size: 15px;
     transition: all 0.3s ease;
 }
-footer .content .box a:hover{
+
+footer .box a:hover {
     color: var(--color-primary);
     transform: translateX(10px);
 }
-footer .card{
+
+footer .card {
     width: 100%;
-    height: 60px;
-    margin-bottom: 5px;
     cursor: pointer;
+    margin-bottom: 10px;
+    height: 100px;
     color: #fff;
-    border: 1px solid #eee;
-    box-shadow: 0px 0px 5px rgba(255, 255, 255, 30%);
+    box-shadow: 0px 0px 5px rgb(255, 255, 255, 90%);
     border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     transition: all 0.3s ease;
 }
-footer .card:hover{
+
+footer .card:hover {
     transform: translateX(10px);
 }
-footer .card .thumbnail{
-    width: 60px;
+
+footer .card .thumbnail {
+    width: 100px;
     border-radius: 5px 0px 0px 5px;
-    height: 60px;
+    height: 100px;
 }
-footer .card .thumbnail img{
-    width: 100%;
+
+footer .card .thumbnail img {
     height: 100%;
+    width: 100%;
     border-radius: 5px 0px 0px 5px;
 }
-footer .card .body{
-    padding: 8px;
+
+footer .card .body {
+    padding: 10px 5px;
     display: flex;
     flex-flow: column;
 }
-footer .card .body .tags{
+
+footer .card .body .tags {
     flex-wrap: wrap;
     display: flex;
-    flex-flow: row;
+    flex-direction: row;
     font-size: 12px;
 }
-footer .card .body .tags .tag{
+
+footer .card .body .tags .tag {
     font-weight: 600;
     background: var(--color-green);
     padding: 2px 4px;
-    margin: 0px 5px;
+    margin: 3px 5px;
     border-radius: 5px;
+}
 
-}
-footer .card .body .post{
+footer .card .body .post {
     font-size: 14px;
-    padding: 4px ;
+    padding: 4px;
 }
-footer .last{
+
+footer .last {
     text-align: center;
     padding: 20px 0;
-    border-top: 1px solid #fff;
+    border-top: 1px solid var(--color-primary);
     color: #fff;
     font-weight: 600;
 }
@@ -165,8 +211,7 @@ footer .last{
     align-items: center;
     justify-content: space-between;
     overflow: hidden;
-    padding: 0px 30px;
-    background-color: var(--color-green);
+    padding: 0px 50px;
 }
 
 .hero .write-up {
@@ -249,18 +294,4 @@ footer .last{
         width: 97%;
     }
 
-}
-
-
-@media screen and (max-width:768px) {
-    header .logo{
-        padding-left: 20px;
-    }
-    header nav{
-        width: calc(100% - 70px);
-        padding-right: 20px;
-    }
-    header nav a{
-        display: none;
-    }
 }
